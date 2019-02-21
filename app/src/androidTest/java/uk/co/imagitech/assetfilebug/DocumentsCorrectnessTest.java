@@ -41,8 +41,8 @@ public class DocumentsCorrectnessTest {
                 in.close();
             }
         }
-        String[] list = targetContext.getAssets().list("Documents/Bookingatest");
-        Assert.assertNotNull(list);
-        Assert.assertTrue("Should be empty: " + missingList.toString() + " Found instead: " + Arrays.toString(list), missingList.isEmpty());
+        String[] assetFiles = targetContext.getAssets().list("Documents");
+        Assert.assertNotNull(assetFiles);
+        Assert.assertTrue("Should be empty: " + missingList.toString() + " Found instead: " + Arrays.toString(assetFiles), missingList.isEmpty());
     }
 }
