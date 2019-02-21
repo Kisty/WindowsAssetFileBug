@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -40,6 +41,8 @@ public class DocumentsCorrectnessTest {
                 in.close();
             }
         }
-        Assert.assertTrue(missingList.isEmpty());
+        String[] list = targetContext.getAssets().list("Documents/Bookingatest");
+        Assert.assertNotNull(list);
+        Assert.assertTrue("Should be empty: " + missingList.toString() + " Found instead: " + Arrays.toString(list), missingList.isEmpty());
     }
 }
